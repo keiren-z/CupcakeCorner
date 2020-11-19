@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CupcakeCorner
 //
-//  Created by Karen Zaracho on 11/14/20.
+//  Created by Keiren on 11/14/20.
 //
 
 import UIKit
