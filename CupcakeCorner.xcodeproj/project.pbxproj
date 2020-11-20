@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D576A16256739CF0024B2CA /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D576A15256739CF0024B2CA /* String+Helper.swift */; };
 		7D837C8225606E07003E813F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D837C8125606E07003E813F /* AppDelegate.swift */; };
 		7D837C8425606E07003E813F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D837C8325606E07003E813F /* SceneDelegate.swift */; };
 		7D837C8625606E07003E813F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D837C8525606E07003E813F /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D576A15256739CF0024B2CA /* String+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
 		7D837C7E25606E07003E813F /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D837C8125606E07003E813F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D837C8325606E07003E813F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				7D837CB72561F70C003E813F /* Order.swift */,
 				7D837CBF2561FBBC003E813F /* AddressView.swift */,
 				7D837CC72561FDCC003E813F /* CheckoutView.swift */,
+				7D576A15256739CF0024B2CA /* String+Helper.swift */,
 				7D837C8725606E09003E813F /* Assets.xcassets */,
 				7D837C8C25606E09003E813F /* LaunchScreen.storyboard */,
 				7D837C8F25606E09003E813F /* Info.plist */,
@@ -277,6 +280,7 @@
 			files = (
 				7D837C8225606E07003E813F /* AppDelegate.swift in Sources */,
 				7D837C8425606E07003E813F /* SceneDelegate.swift in Sources */,
+				7D576A16256739CF0024B2CA /* String+Helper.swift in Sources */,
 				7D837CC82561FDCC003E813F /* CheckoutView.swift in Sources */,
 				7D837CB82561F70C003E813F /* Order.swift in Sources */,
 				7D837C8625606E07003E813F /* ContentView.swift in Sources */,

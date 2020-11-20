@@ -14,9 +14,13 @@ struct AddressView: View {
         Form {
             Section {
                 TextField("Name", text: $order.name)
+                    .disableAutocorrection(true)
                 TextField("Street Address", text: $order.streetAddress)
+                    .disableAutocorrection(true)
                 TextField("City", text: $order.city)
+                    .disableAutocorrection(true)
                 TextField("Zip", text: $order.zip)
+                    .disableAutocorrection(true)
             }
             
             Section {

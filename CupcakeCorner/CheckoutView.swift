@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CheckoutView: View {
     @ObservedObject var order: Order
-    @State private var confirmationMessage = ""
-    @State private var showingConfirmation = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var showingAlert = false
     
     var body: some View {
         GeometryReader { geo in
@@ -33,8 +34,9 @@ struct CheckoutView: View {
             }
         }
         .navigationBarTitle("Checkout", displayMode: .inline)
-        .alert(isPresented: $showingConfirmation) {
-            Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
+        
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
     }
     
@@ -52,18 +54,32 @@ struct CheckoutView: View {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
-                print("No data in response: \(error?.localizedDescription ?? "Unkonwn error").")
+                // Challenge 2
+                if let nsError = error as NSError? {
+                    let errorCode = nsError.code
+                    /// -1009 is the offline error code
+                    /// HTTP load failed (error code: -1009)
+                    if errorCode == -1009 {
+                        alert(title: "Warning‼️", message: "Please check your internet connection and try again.")
+                    }
+                }
+                
                 return
             }
             
             if let decodedOrder = try? JSONDecoder().decode(Order.self, from: data) {
-                self.confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way"
-                self.showingConfirmation = true
+                alert(title: "Thank you🥰", message: "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way")
             } else {
                 print("Invalid response from server")
             }
             
         }.resume()
+    }
+    
+    func alert(title: String, message: String) {
+        alertTitle = title
+        alertMessage = message
+        showingAlert = true
     }
 }
 
